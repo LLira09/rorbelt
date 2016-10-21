@@ -1,0 +1,29 @@
+<h1>Welcome</h1>
+<fieldset>
+  <legend>Register</legend>
+  <form action="/users/new" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <label>First Name:<input type="text" name="user[first_name]" value=""></label><br>
+    <label>Last Name:<input type="text" name="user[last_name]" value=""></label><br>
+    <label>Email:<input type="text" name="user[email]" value=""></label><br>
+    <label>Location:<input type="text" name="user[location]" value=""></label>
+    <select name="user[state]">
+      <option value="CA">CA</option>
+      <option value="NV">NV</option>
+      <option value="AZ">AZ</option>
+      <option value="TX">TX</option>
+      <option value="NY">NY</option>
+    </select><br>
+    <label>Password:<input type="text" name="user[password]" value=""></label><br>
+    <label>Confirm PW:<input type="text" name="user[password_confirmation]" value=""></label><br>
+    <input type="submit" value="Register">
+  </form>
+</fieldset>
+<fieldset>
+  <legend>Login</legend>
+  <form action="/users/check" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <label>Email:<input type="text" name="email" value=""></label><br>
+    <label>Password:<input type="password" name="password" value=""></label><br>
+    <input type="submit" value="Login">
+</fieldset>
